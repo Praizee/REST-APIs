@@ -20,7 +20,7 @@ const Home = () => {
         transition={{ duration: 3 }}
       >
         <div className="laptop:mt-[20rem] h-[4rem] p-4 laptop:p-0 mt-[10rem] laptop:min-h-screen mb-0 laptop:mx-[7rem] ">
-          <h1 className="">
+          <h1 className="text-[3rem] uppercase font-semibold text-center">
             Home
           </h1>
 
