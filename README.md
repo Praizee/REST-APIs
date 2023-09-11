@@ -1,7 +1,7 @@
 # REST APIs
 
-![Alt text](image.png)
-![Alt text](image-1.png)
+<img src="/src/assets/image-1.png" width="40%" alt="logo"/>
+<!-- <img src="/src/assets/image.png" width="40%" alt="logo"/> -->
 
 # React + Vite
 
