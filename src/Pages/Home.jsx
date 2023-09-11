@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 
 
@@ -9,9 +10,29 @@ const animationConfiguration = {
 };
 
 const Home = () => {
-
-  return (
-    <section className="text-black bg-white">
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users/")
+      .then(res => res.json())
+      .then(
+        (data) => {
+          setIsLoaded(true);
+          setUsers(data);
+        },
+        (error) => {
+          setIsLoaded(true);
+          setError(error);
+        }
+      )
+  }, [])
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  } else if (!isLoaded) {
+    return <div>Loading...</div>;
+  } else {
+    return (
       <motion.div
         variants={animationConfiguration}
         initial="initial"
@@ -19,17 +40,32 @@ const Home = () => {
         exit="exit"
         transition={{ duration: 3 }}
       >
-        <div className="laptop:mt-[20rem] h-[4rem] p-4 laptop:p-0 mt-[10rem] laptop:min-h-screen mb-0 laptop:mx-[7rem] ">
-          <h1 className="text-[3rem] uppercase font-semibold text-center">
-            Home
-          </h1>
 
-        </div>
+
+        <section className=''>
+
+          <div className='hero-content'>
+            <div className='mx-[3rem]'>
+
+              <ul className=''>
+                {users.map(user => (
+                  <li key={user.id}
+                    className='p-2 link link-hover'
+                  >
+                    <Link to={`user/${user.id}`}>{user.name}</Link>
+                  </li>
+                ))}
+              </ul>
+
+            </div>
+          </div>
+
+        </section>
 
 
       </motion.div>
-    </section>
-  );
+    );
+  }
 };
 
 export default Home;
