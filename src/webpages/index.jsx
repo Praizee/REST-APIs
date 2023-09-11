@@ -8,7 +8,7 @@ import {
 import Home from './home';
 import User from './user';
 
-export const Webpages = () => {
+const Webpages = () => {
     return (
         <Router>
             <Route exact path="/" component={Home} />
@@ -16,3 +16,5 @@ export const Webpages = () => {
         </Router>
     );
 };
+
+export default Webpages
