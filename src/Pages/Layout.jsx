@@ -9,7 +9,7 @@ const Layout = () => {
     return (
         <section>
             <div>
-                <Navbar />
+                {/* <Navbar /> */}
             </div>
 
             <div className="">
@@ -17,7 +17,7 @@ const Layout = () => {
             </div>
 
             <div className="">
-                <Footer />
+                {/* <Footer /> */}
             </div>
             <ScrollButton />
         </section>
