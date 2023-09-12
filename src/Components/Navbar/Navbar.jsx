@@ -57,7 +57,7 @@ const Navbar = () => {
                                     <NavLink to={item.path} className={({ isActive }) =>
                                         isActive ? 'flex min-w-max ' : 'flex rounded-none min-w-max'
                                     }>
-                                        <span className="w-[20%] bg-[#2E2E2E]">
+                                        <span className="p-4 text-white bg-transparent hover:bg-transparent mx-1 btn">
                                             {item.title}
                                         </span>
                                     </NavLink>
