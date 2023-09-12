@@ -26,4 +26,4 @@ export default function App() {
 
 // https://www.smashingmagazine.com/2020/04/react-hooks-api-guide/
 
-https://www.freecodecamp.org/news/how-to-consume-rest-apis-in-react/
+// https://www.freecodecamp.org/news/how-to-consume-rest-apis-in-react/
