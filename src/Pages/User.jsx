@@ -6,7 +6,7 @@ const User = props => {
     var id = props.match.params.id
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [user, setUser] = useState([]);
+    const [user, setUser] = useState(null); // Change from [] to null
     const [userAddress, setUserAddress] = useState([]);
     const [userCompany, setUserCompany] = useState([]);
 
@@ -31,7 +31,9 @@ const User = props => {
         return <div>Error: {error.message}</div>;
     }
     if (!isLoaded) {
-        return <div>Loading...</div>;
+        return <div className=''>
+            Loading...
+        </div>;
     }
 
     if (user) {
