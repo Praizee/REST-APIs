@@ -10,7 +10,7 @@ const Navbar = () => {
             <div className="navbar-start laptop:ml-[6.5rem] mx-4">
                 <a className="leading-[1.5rem] text-black font-black text-[1.5rem]">
                     {/* <img className="w-[60%]" src={BlackLogo} alt="web Logo" /> */}
-                    <h1>
+                    <h1 className="font-bold">
                         Logo
                     </h1>
                 </a>
