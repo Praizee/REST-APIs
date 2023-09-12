@@ -12,7 +12,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="/user/:id" component={User} />
+          <Route path="/user/:id" element={<User />} />
           {/* This is the catch-all route */}
           <Route path="*" element={<NotFoundPage />} />
         </Route>
