@@ -1,5 +1,4 @@
 import React from "react";
-import { FiArrowRight } from "react-icons/fi";
 
 const Footer = () => {
     // date for copyright
