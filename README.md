@@ -3,7 +3,7 @@
 <!-- <img src="/src/assets/image-1.png" width="40%" alt="logo"/> -->
 <img src="/src/assets/image.png" width="40%" alt="logo"/>
 
-Certainly! I'll break down the code in a clear and understandable way.
+Here's a break down of the code in a clear and understandable way.
 
 ### Home.jsx
 
