@@ -79,7 +79,7 @@ const Home = () => {
       exit="exit"
       transition={{ duration: 3 }}
     >
-      <section className="bg-[#F8F8FD] selection:bg-blue-400 border-4 border-blue-500 mt-[4rem] text-black">
+      <section className="bg-[#F8F8FD] selection:bg-blue-400 border-4 border-blue-500 laptop:mt-[4rem] mt-[6rem] text-black">
         <div className="">
           <div className="mx-[rem] min-h-[calc(100vh-14.65rem)]">
             <div className="mx-4 text-center">
@@ -105,7 +105,7 @@ const Home = () => {
                 </div>
 
                 {/* Filters and Cancel button */}
-                <div className="mt-4 flex space-x-4">
+                <div className="mt-4 laptop:flex laptop:space-y-0 space-y-4 space-x-4">
                   <input
                     type="text"
                     value={yearFilter}
