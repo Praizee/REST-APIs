@@ -126,7 +126,7 @@ const Home = () => {
       exit="exit"
       transition={{ duration: 3 }}
     >
-      <section className='bg-[#F8F8FD] border-2 border-blue-500 mt-[4rem] text-black'>
+      <section className='bg-[#F8F8FD] selection:bg-blue-400 border-2 border-blue-500 mt-[4rem] text-black'>
 
         <div className="">
           <div className='mx-[rem] min-h-[calc(100vh-13.5rem)]'>
