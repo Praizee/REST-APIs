@@ -22,6 +22,8 @@ const Home = () => {
     try {
       const response = await fetch(searchUrl);
       const data = await response.json();
+      console.log(data);
+
       if (data.Search) {
         let sortedMovies = [...data.Search]; // Create a copy of the movies array to avoid modifying the original data
         if (yearFilter === 'recent') {
