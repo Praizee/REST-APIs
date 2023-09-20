@@ -123,22 +123,24 @@ const Home = () => {
           <div className='mx-[rem] min-h-[calc(100vh-19.5rem)]'>
 
             <div className='mx-4 text-center'>
-              {/* input */}
-              <input type="text"
-                value={search}
-                onChange={onInputChange}
-                autoComplete='true'
-                className="text-[1.5rem] p-2"
-              />
+              <div className="my-12">
+                {/* input */}
+                <input type="text"
+                  value={search}
+                  onChange={onInputChange}
+                  autoComplete='true'
+                  className="laptop:text-[1.3rem] text-[1rem] tablet:text-[1.2rem] p-2 px-4 bg-slate-200 rounded-l-3xl"
+                />
 
-              {/* search button */}
-              <button
-                type="submit"
-                onClick={getMovie}
-                className="btn text-[1.5rem] normal-case bg-[#DF8026] my-12"
-              >
-                Search
-              </button>
+                {/* search button */}
+                <button
+                  type="submit"
+                  onClick={getMovie}
+                  className="btn laptop:text-[1.3rem] text-[1rem] tablet:text-[1.2rem] p-2 px-4 normal-case text-[#f8f8fd] bg-[#DF8026] hover:bg-[#DF8026]/75 rounded-r-3xl rounded-l-none border-none"
+                >
+                  Search
+                </button>
+              </div>
 
 
               {/* movie search details/results */}
