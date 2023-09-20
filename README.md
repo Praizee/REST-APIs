@@ -2,8 +2,8 @@
 
 <!-- <img src="/src/assets/image-1.png" width="40%" alt="logo"/> -->
 <img src="/src/assets/image.png" width="40%" alt="logo"/>
-![Alt text](image.png)
-![Alt text](image-1.png)
+<img src="/src/assets/imdb.png" width="40%" alt="imdblogo"/>
+<!-- <img src="/src/assets/imdb01.png" width="40%" alt="imdblogo"/> -->
 
 Here's a break down of the code in a clear and understandable way.
 
