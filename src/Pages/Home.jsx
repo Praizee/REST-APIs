@@ -57,6 +57,10 @@ const Home = () => {
               {data.Released}
             </p>
             <p>
+              <b>Rated:</b> &nbsp;
+              {data.Rated}
+            </p>
+            <p>
               <b>Genre:</b> &nbsp;
               {data.Genre}
             </p>
@@ -79,6 +83,10 @@ const Home = () => {
             <p>
               <b>Runtime:</b> &nbsp;
               {data.Runtime}
+            </p>
+            <p>
+              <b>Production:</b> &nbsp;
+              {data.Production}
             </p>
             <p>
               <b>IMDB Rating:</b> &nbsp;
