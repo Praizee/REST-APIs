@@ -1,8 +1,10 @@
 # REST APIs
 
 <!-- <img src="/src/assets/image-1.png" width="40%" alt="logo"/> -->
+<span className="flex">
 <img src="/src/assets/image.png" width="40%" alt="logo"/>
 <img src="/src/assets/imdb.png" width="40%" alt="imdblogo"/>
+</span>
 <!-- <img src="/src/assets/imdb01.png" width="40%" alt="imdblogo"/> -->
 
 Here's a break down of the code in a clear and understandable way.
