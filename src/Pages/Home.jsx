@@ -10,62 +10,34 @@ const animationConfiguration = {
 };
 
 const Home = () => {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [users, setUsers] = useState([]);
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users/")
-      .then(res => res.json())
-      .then(
-        (data) => {
-          setIsLoaded(true);
-          setUsers(data);
-        },
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      )
-  }, [])
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  } else if (!isLoaded) {
-    return <div>Loading...</div>;
-  } else {
-    return (
-      <motion.div
-        variants={animationConfiguration}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        transition={{ duration: 3 }}
-      >
+  const [movie, setMovie] = useState({});
+  const [search, setSearch] = useState('');
+  const API_KEY = "your_api_key";
+  const url = `http://www.omdbapi.com/?t=${search}&apikey=${API_KEY}`;
+
+  return (
+    <motion.div
+      variants={animationConfiguration}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={{ duration: 3 }}
+    >
+      <section className=''>
+
+        <div className='hero-content bg-[#F8F8FD]'>
+          <div className='mx-[3rem] min-h-[calc(100vh-19.5rem)]'>
 
 
-        <section className=''>
-
-          <div className='hero-content'>
-            <div className='mx-[3rem]'>
-
-              <ul className=''>
-                {users.map(user => (
-                  <li key={user.id}
-                    className='p-2 link link-hover'
-                  >
-                    <Link to={`user/${user.id}`}>{user.name}</Link>
-                  </li>
-                ))}
-              </ul>
-
-            </div>
           </div>
+        </div>
 
-        </section>
+      </section>
 
 
-      </motion.div>
-    );
-  }
-};
+    </motion.div>
+  );
+}
+
 
 export default Home;
