@@ -107,7 +107,7 @@ const Home = () => {
                 </div>
 
                 {/* Filters and Cancel button */}
-                <div className="mt-4 laptop:flex laptop:space-y-0 space-y-4 space-x-4">
+                <div className="mt-4 laptop:flex mx-[rem] laptop:space-y-0 space-y-4 space-x-4">
                   <input
                     type="text"
                     value={yearFilter}
