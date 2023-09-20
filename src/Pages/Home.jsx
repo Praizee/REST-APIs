@@ -128,14 +128,14 @@ const Home = () => {
                 value={search}
                 onChange={onInputChange}
                 autoComplete='true'
-                className="text-[2rem]"
+                className="text-[1.5rem] p-2"
               />
 
               {/* search button */}
               <button
                 type="submit"
                 onClick={getMovie}
-                className="btn text-[2rem] my-12"
+                className="btn text-[1.5rem] normal-case bg- my-12"
               >
                 Search
               </button>
