@@ -6,7 +6,7 @@ const Navbar = () => {
     const [showNav, setshowNav] = useState(false)
 
     return (
-        <div className="navbar bg-white border-none fixed py-4 top-0 -mt-1 z-[100]">
+        <div className="navbar bg-white border-none fixed py-4 top-0 -mt-1 z-[100] selection:bg-blue-400">
             <div className="navbar-start laptop:ml-[6.5rem] mx-4">
                 <a className="leading-[1.5rem] text-black font-black text-[2rem]">
                     {/* <img className="w-[60%]" src={BlackLogo} alt="web Logo" /> */}
