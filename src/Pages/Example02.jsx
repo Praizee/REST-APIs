@@ -12,8 +12,8 @@ const Example02 = () => {
     const [popularMovies, setPopularMovies] = useState([]);
     const [search, setSearch] = useState('');
     const API_KEY = 'e6a9241d';
-    const url = `http://www.omdbapi.com/?t=${search}&apikey=${API_KEY}`;
-    const popularMoviesUrl = `http://www.omdbapi.com/?s=popular&apikey=${API_KEY}`;
+    const url = `https://www.omdbapi.com/?t=${search}&apikey=${API_KEY}`;
+    const popularMoviesUrl = `https://www.omdbapi.com/?s=popular&apikey=${API_KEY}`;
 
     const getMovie = async () => {
         try {
