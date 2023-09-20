@@ -14,6 +14,7 @@ const Home = () => {
   const [search, setSearch] = useState('');
   const API_KEY = "e6a9241d";
   const url = `http://www.omdbapi.com/?t=${search}&apikey=${API_KEY}`;
+  // const url = `http://www.omdbapi.com/?t=${search}&apikey=${API_KEY}&plot=full`;
 
   const getMovie = async () => {
     try {
