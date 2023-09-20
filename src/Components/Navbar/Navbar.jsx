@@ -17,21 +17,24 @@ const Navbar = () => {
             </div>
 
             {/* displays on wide screen */}
-            {/* <div className="navbar-center hidden laptop:flex laptop:mr-[20rem]">
-        <ul className="menu-horizontal px-1">
-          {NavbarData.map((item, index) => {
-            return (
-              <li key={index} className="">
-                <NavLink to={item.path} className={({ isActive }) =>
-                  isActive ? 'flex min-w-max rounded-none mx-2 pb-[0.3rem] border-b-[3px] px-1 border-[black]' : 'font-medium min-w-max px-1 mx-2'
-                }>
-                  <span className={item.className}>{item.title}</span>
-                </NavLink>
-              </li>
-            );
-          })}
-        </ul>
-      </div> */}
+            <div className="navbar-center hidden laptop:flex ">
+                {/* laptop:mr-[20rem] */}
+                <ul className="menu-horizontal px-1">
+                    {NavbarData.map((item, index) => {
+                        return (
+                            <li key={index} className="">
+                                <NavLink to={item.path} className={({ isActive }) =>
+                                    isActive ? 'flex min-w-max rounded-none mx-2 pb-[0.3rem] border-b-[3px] px-1 border-[black] font-medium transition duration-500 ease-linear'
+                                        :
+                                        'min-w-max px-1 mx-2 transition duration-500 ease-linear'
+                                }>
+                                    <span className={item.className}>{item.title}</span>
+                                </NavLink>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </div>
 
             <div className="navbar-end">
                 <div className="">
