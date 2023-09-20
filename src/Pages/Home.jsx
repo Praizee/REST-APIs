@@ -37,7 +37,7 @@ const Home = () => {
   function checkResponse(data) {
     if (data.Response === "True") {
       return (
-        <div className="grid grid-cols-3 p-4">
+        <div className="grid laptop:grid-cols-4 tablet:grid-cols-2 grid-cols-1 gap-4 p-4">
           <div className="text-left w-auto border p-2 rounded-2xl">
             <img
               src={data.Poster}
@@ -53,6 +53,10 @@ const Home = () => {
               {data.Year}
             </p>
             <p>
+              <b>Released:</b> &nbsp;
+              {data.Released}
+            </p>
+            <p>
               <b>Genre:</b> &nbsp;
               {data.Genre}
             </p>
@@ -65,20 +69,28 @@ const Home = () => {
               {data.Actors}
             </p>
             <p>
-              <b>Runtime:</b> &nbsp;
-              {data.Runtime}
-            </p>
-            <p>
               <b>Plot:</b> &nbsp;
               {data.Plot}
+            </p>
+            <p>
+              <b>Type:</b> &nbsp;
+              {data.Type}
+            </p>
+            <p>
+              <b>Runtime:</b> &nbsp;
+              {data.Runtime}
             </p>
             <p>
               <b>IMDB Rating:</b> &nbsp;
               {data.imdbRating}
             </p>
             <p>
-              <b>Type:</b> &nbsp;
-              {data.Type}
+              <b>Country:</b> &nbsp;
+              {data.Country}
+            </p>
+            <p>
+              <b>Languages:</b> &nbsp;
+              {data.Language}
             </p>
             <p>
               <b>Awards:</b> &nbsp;
@@ -105,12 +117,12 @@ const Home = () => {
       exit="exit"
       transition={{ duration: 3 }}
     >
-      <section className='bg-[#F8F8FD] text-black'>
+      <section className='bg-[#F8F8FD] border-2 border-blue-500 mt-[4rem] text-black'>
 
         <div className="">
           <div className='mx-[rem] min-h-[calc(100vh-19.5rem)]'>
 
-            <div className='mt-[10rem] mx-4 text-center'>
+            <div className='mx-4 text-center'>
               {/* input */}
               <input type="text"
                 value={search}
@@ -118,6 +130,8 @@ const Home = () => {
                 autoComplete='true'
                 className="text-[2rem]"
               />
+
+              {/* search button */}
               <button
                 type="submit"
                 onClick={getMovie}
@@ -127,7 +141,7 @@ const Home = () => {
               </button>
 
 
-
+              {/* movie search details/results */}
               <div className="">
                 {checkResponse(movie)}
               </div>
