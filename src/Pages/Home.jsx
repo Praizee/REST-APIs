@@ -94,20 +94,20 @@ const Home = () => {
                     onChange={onInputChange}
                     autoComplete="true"
                     placeholder="Search for movies..."
-                    className="laptop:text-[1.3rem] text-[1rem] tablet:text-[1.2rem] p-2 px-4 pl-5 bg-slate-200 rounded-l-3xl"
+                    className="laptop:text-[1.3rem] text-[0.875rem] tablet:text-[1.2rem] p-2 px-4 pl-5 bg-slate-200 rounded-l-3xl"
                   />
                   {/* Search button */}
                   <button
                     type="submit"
                     onClick={getMovies}
-                    className="btn laptop:text-[1.3rem] text-[1rem] tablet:text-[1.2rem] p-2 px-4 normal-case text-[#f8f8fd] hover:bg-[#DF8026] bg-[#DF8026]/90 rounded-r-3xl rounded-l-none border-none"
+                    className="btn laptop:text-[1.3rem] text-[0.875rem] tablet:text-[1.2rem] p-2 px-4 normal-case text-[#f8f8fd] hover:bg-[#DF8026] bg-[#DF8026]/90 rounded-r-3xl rounded-l-none border-none"
                   >
                     Search
                   </button>
                 </div>
 
                 {/* Filters and Cancel button */}
-                <div className="mt-4 laptop:flex mx-[rem] laptop:space-y-0 space-y-4 space-x-4">
+                <div className="mt-4 laptop:flex laptop:mx-[rem] laptop:space-y-0 space-y-4 space-x-4">
                   <input
                     type="text"
                     value={yearFilter}
@@ -148,7 +148,7 @@ const Home = () => {
                 {selectedMovie ? ( // If a movie is selected, show the detailed view
                   <MovieDetail movie={selectedMovie} />
                 ) : movies.length > 0 ? (
-                  <div className="grid laptop:grid-cols-4 tablet:grid-cols-2 grid-cols-1 gap-4 p-4">
+                  <div className="grid cursor-pointer laptop:grid-cols-4 tablet:grid-cols-2 grid-cols-1 laptop:gap-8 tablet:gap-6 gap-10 p-4">
                     {movies.map((movie) => (
                       <div
                         key={movie.imdbID}
