@@ -120,7 +120,7 @@ const Home = () => {
       <section className='bg-[#F8F8FD] border-2 border-blue-500 mt-[4rem] text-black'>
 
         <div className="">
-          <div className='mx-[rem] min-h-[calc(100vh-19.5rem)]'>
+          <div className='mx-[rem] min-h-[calc(100vh-13.5rem)]'>
 
             <div className='mx-4 text-center'>
               <div className="my-12">
