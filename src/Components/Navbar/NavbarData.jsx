@@ -7,15 +7,14 @@ export const NavbarData = [
     },
 
     {
-        title: 'About Us',
-        path: "/",
+        title: 'Example 02',
+        path: "/example-02",
         className: "",
     },
-
     {
-        title: 'Contact',
-        path: "/",
+        title: 'Example 03',
+        path: "/example-03",
         className: "",
-    }
+    },
 
 ];
