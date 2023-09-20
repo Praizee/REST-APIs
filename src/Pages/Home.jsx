@@ -98,7 +98,7 @@ const Home = () => {
                   <button
                     type="submit"
                     onClick={getMovies}
-                    className="btn laptop:text-[1.3rem] text-[1rem] tablet:text-[1.2rem] p-2 px-4 normal-case text-[#f8f8fd] bg-[#DF8026] hover:bg-[#DF8026]/75 rounded-r-3xl rounded-l-none border-none"
+                    className="btn laptop:text-[1.3rem] text-[1rem] tablet:text-[1.2rem] p-2 px-4 normal-case text-[#f8f8fd] hover:bg-[#DF8026] bg-[#DF8026]/90 rounded-r-3xl rounded-l-none border-none"
                   >
                     Search
                   </button>
