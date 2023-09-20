@@ -7,7 +7,7 @@ const animationConfiguration = {
     exit: { opacity: 0 },
 };
 
-const Home = () => {
+const Example02 = () => {
     const [movie, setMovie] = useState({});
     const [popularMovies, setPopularMovies] = useState([]);
     const [search, setSearch] = useState('');
@@ -141,4 +141,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Example02;
