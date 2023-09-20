@@ -135,7 +135,7 @@ const Home = () => {
               <button
                 type="submit"
                 onClick={getMovie}
-                className="btn text-[1.5rem] normal-case bg- my-12"
+                className="btn text-[1.5rem] normal-case bg-[#DF8026] my-12"
               >
                 Search
               </button>
