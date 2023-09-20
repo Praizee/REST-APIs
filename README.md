@@ -1,7 +1,7 @@
 # REST APIs
 
 <!-- <img src="/src/assets/image-1.png" width="40%" alt="logo"/> -->
-<span className="flex">
+<span className="flex gap-6">
 <img src="/src/assets/image.png" width="40%" alt="logo"/>
 <img src="/src/assets/imdb.png" width="40%" alt="imdblogo"/>
 </span>
