@@ -21,8 +21,8 @@ const Footer = () => {
                             Stephen Adeniji
                         </a>
                     </p>
-                    <p className="py-2 copyright text-white/50 laptop:mr-[rem] laptop:ml-0 mx-8 text-[0.85rem] laptop:block tablet:block ">
-                        *API Consumption => (IMDB)*
+                    <p className="py-2 copyright text-white/40 laptop:mr-[rem] laptop:ml-0 mx-8 text-[0.85rem] laptop:block tablet:block ">
+                        *API Consumption practice with IMDB 🎬*
                     </p>
                     <p className="py-2 copyright laptop:mr-[rem] laptop:ml-0 mx-8 text-[0.85rem] laptop:block tablet:block ">
                         {/* text-[#ffffff74] */}
