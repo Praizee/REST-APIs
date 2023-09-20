@@ -42,7 +42,7 @@ const Home = () => {
           <div className="text-left w-auto border p-2 rounded-2xl">
             <img
               src={data.Poster}
-              alt="Movie Poster"
+              alt={data.Title}
               className="w-full mb-4 rounded-2xl"
             />
             <h1 className="">
@@ -92,6 +92,10 @@ const Home = () => {
             <p>
               <b>IMDB Rating:</b> &nbsp;
               {data.imdbRating}
+            </p>
+            <p>
+              <b>IMDB ID:</b> &nbsp;
+              {data.imdbID}
             </p>
             <p>
               <b>Country:</b> &nbsp;
