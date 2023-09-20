@@ -12,8 +12,90 @@ const animationConfiguration = {
 const Home = () => {
   const [movie, setMovie] = useState({});
   const [search, setSearch] = useState('');
-  const API_KEY = "your_api_key";
+  const API_KEY = "e6a9241d";
   const url = `http://www.omdbapi.com/?t=${search}&apikey=${API_KEY}`;
+
+  const getMovie = async () => {
+    try {
+      const response = await fetch(url);
+      const data = await response.json()
+      setMovie(data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  const onInputChange = e => {
+    setSearch(e.target.value);
+  }
+
+  useEffect(() => {
+    getMovie();
+  }, []);
+
+
+  function checkResponse(data) {
+    if (data.Response === "True") {
+      return (
+        <div className="grid grid-cols-3 p-4">
+          <div className="text-left w-auto border p-2 rounded-2xl">
+            <img
+              src={data.Poster}
+              alt="Movie Poster"
+              className="w-full mb-4 rounded-2xl"
+            />
+            <h1 className="">
+              <b>Movie Title:</b> &nbsp;
+              {data.Title}
+            </h1>
+            <p>
+              <b>Year: </b> &nbsp;
+              {data.Year}
+            </p>
+            <p>
+              <b>Genre:</b> &nbsp;
+              {data.Genre}
+            </p>
+            <p>
+              <b>Writer:</b> &nbsp;
+              {data.Writer}
+            </p>
+            <p>
+              <b>Actors:</b> &nbsp;
+              {data.Actors}
+            </p>
+            <p>
+              <b>Runtime:</b> &nbsp;
+              {data.Runtime}
+            </p>
+            <p>
+              <b>Plot:</b> &nbsp;
+              {data.Plot}
+            </p>
+            <p>
+              <b>IMDB Rating:</b> &nbsp;
+              {data.imdbRating}
+            </p>
+            <p>
+              <b>Type:</b> &nbsp;
+              {data.Type}
+            </p>
+            <p>
+              <b>Awards:</b> &nbsp;
+              {data.Awards}
+            </p>
+            {/* <p>Ratings: [{data.Ratings}]</p> */}
+            <p className='hidden'>{data.Response}</p>
+          </div>
+        </div>
+      );
+    }
+    return (
+      <p className='my-8'>
+        No Movie found! 😥
+      </p>
+    );
+  }
 
   return (
     <motion.div
@@ -23,11 +105,34 @@ const Home = () => {
       exit="exit"
       transition={{ duration: 3 }}
     >
-      <section className=''>
+      <section className='bg-[#F8F8FD] text-black'>
 
-        <div className='hero-content bg-[#F8F8FD]'>
-          <div className='mx-[3rem] min-h-[calc(100vh-19.5rem)]'>
+        <div className="">
+          <div className='mx-[rem] min-h-[calc(100vh-19.5rem)]'>
 
+            <div className='mt-[10rem] mx-4 text-center'>
+              {/* input */}
+              <input type="text"
+                value={search}
+                onChange={onInputChange}
+                autoComplete='true'
+                className="text-[2rem]"
+              />
+              <button
+                type="submit"
+                onClick={getMovie}
+                className="btn text-[2rem] my-12"
+              >
+                Search
+              </button>
+
+
+
+              <div className="">
+                {checkResponse(movie)}
+              </div>
+
+            </div>
 
           </div>
         </div>
