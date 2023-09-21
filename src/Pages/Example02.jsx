@@ -129,7 +129,10 @@ const Example02 = () => {
                             </div>
 
                             {/* movie search details/results */}
-                            <div className="">
+                            <div className="bg-blue-200 py-8 px-4">
+                                <h1 className='text-center mb-8 text-[1.5rem] font-semibold'>
+                                    Search Results
+                                </h1>
                                 {checkResponse(movie)}
                             </div>
 
