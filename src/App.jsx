@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Layout from "./Pages/Layout";
 import HomePage from "./Pages/Home";
 import NotFoundPage from "./Pages/404 Page/NotFoundPage.jsx";
-import Example02 from "./Pages/Example02";
-import Example03 from "./Pages/Example03";
+import Case02 from "./Pages/Case02";
+import Case03 from "./Pages/Case03";
 // import MovieDetail from "./Pages/MovieDetail";
 
 export default function App() {
@@ -14,8 +14,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="/example-02" element={<Example02 />} />
-          <Route path="/example-03" element={<Example03 />} />
+          <Route path="/case-02" element={<Case02 />} />
+          <Route path="/case-03" element={<Case03 />} />
           {/* <Route path="/movie/:id" component={MovieDetail} /> */}
           {/* This is the catch-all route */}
           <Route path="*" element={<NotFoundPage />} />
