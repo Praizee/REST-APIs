@@ -7,7 +7,7 @@ const animationConfiguration = {
     exit: { opacity: 0 },
 };
 
-const Example02 = () => {
+const Case02 = () => {
     const [movie, setMovie] = useState({});
     const [popularMovies, setPopularMovies] = useState([]);
     const [search, setSearch] = useState('');
@@ -102,6 +102,9 @@ const Example02 = () => {
                                 >
                                     Search
                                 </button>
+                                <p className=' italic text-black/60 text-[0.875rem] my-1'>
+                                    Search results show up at the bottom of the page
+                                </p>
                             </div>
 
                             {/* popular movies */}
@@ -129,7 +132,7 @@ const Example02 = () => {
                             </div>
 
                             {/* movie search details/results */}
-                            <div className="bg-blue-200 py-8 px-4">
+                            <div className="py-20 px-4">
                                 <h1 className='text-center mb-8 text-[1.5rem] font-semibold'>
                                     Search Results
                                 </h1>
@@ -144,4 +147,4 @@ const Example02 = () => {
     );
 };
 
-export default Example02;
+export default Case02;

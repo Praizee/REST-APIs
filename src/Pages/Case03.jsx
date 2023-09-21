@@ -9,7 +9,7 @@ const animationConfiguration = {
     exit: { opacity: 0 },
 };
 
-const Example03 = () => {
+const Case03 = () => {
     const [movie, setMovie] = useState({});
     const [search, setSearch] = useState('');
     const API_KEY = "e6a9241d";
@@ -161,4 +161,4 @@ const Example03 = () => {
 }
 
 
-export default Example03;
+export default Case03;
