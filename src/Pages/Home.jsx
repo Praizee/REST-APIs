@@ -16,7 +16,6 @@ const Home = () => {
   const [selectedMovie, setSelectedMovie] = useState(null); // Track the selected movie
   const API_KEY = 'e6a9241d';
   const searchUrl = `https://www.omdbapi.com/?s=${search}&y=${yearFilter}&i=${imdbIdFilter}&apikey=${API_KEY}`;
-  const popularMoviesUrl = `https://www.omdbapi.com/?s=popular&apikey=${API_KEY}`;
 
   const getMovies = async () => {
     try {
