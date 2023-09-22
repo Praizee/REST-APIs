@@ -20,6 +20,7 @@ const Case03 = () => {
             const response = await fetch(url);
             const data = await response.json()
             setMovie(data);
+            console.log(data);
         } catch (error) {
             console.error(error);
         }
