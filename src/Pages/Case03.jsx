@@ -97,7 +97,6 @@ const Case03 = () => {
                             <b>Awards:</b> &nbsp;
                             {data.Awards}
                         </p>
-                        {/* <p>Ratings: [{data.Ratings}]</p> */}
                         <p className='hidden'>{data.Response}</p>
                     </div>
                 </div>
