@@ -13,7 +13,7 @@ const Case03 = () => {
     const [movie, setMovie] = useState({});
     const [search, setSearch] = useState('');
     const API_KEY = "e6a9241d";
-    const url = `http://www.omdbapi.com/?t=${search}&apikey=${API_KEY}`;
+    const url = `https://www.omdbapi.com/?t=${search}&apikey=${API_KEY}`;
 
     const getMovie = async () => {
         try {
