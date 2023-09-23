@@ -92,6 +92,7 @@ const Home = () => {
                     value={search}
                     onChange={onInputChange}
                     autoComplete="true"
+                    autoFocus
                     placeholder="Search for movies..."
                     className=" input laptop:text-[1.3rem] text-[0.875rem] tablet:text-[1.2rem] p-2 px-4 pl-5 bg-slate-200 rounded-l-3xl"
                   />
