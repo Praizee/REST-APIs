@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from "framer-motion";
-
+import { motion } from 'framer-motion';
 
 const animationConfiguration = {
     initial: { opacity: 0 },
@@ -11,99 +9,66 @@ const animationConfiguration = {
 
 const Case03 = () => {
     const [movie, setMovie] = useState({});
+    const [popularMovies, setPopularMovies] = useState([]);
     const [search, setSearch] = useState('');
-    const API_KEY = "e6a9241d";
+    const API_KEY = 'e6a9241d';
     const url = `https://www.omdbapi.com/?t=${search}&apikey=${API_KEY}`;
+    // const popularMoviesUrl = `https://www.omdbapi.com/?s=popular&apikey=${API_KEY}`;
+    const popularMoviesUrl = `https://www.omdbapi.com/?type=movie&plot=short&r=json&apikey=${API_KEY}`;
+
 
     const getMovie = async () => {
         try {
             const response = await fetch(url);
-            const data = await response.json()
+            const data = await response.json();
             setMovie(data);
-            console.log(data);
         } catch (error) {
             console.error(error);
         }
-    }
+    };
 
-    const onInputChange = e => {
+    const getPopularMovies = async () => {
+        try {
+            const response = await fetch(popularMoviesUrl);
+            const data = await response.json();
+            if (data.Search) {
+                setPopularMovies(data.Search);
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    const onInputChange = (e) => {
         setSearch(e.target.value);
-    }
+    };
 
     useEffect(() => {
         getMovie();
+        getPopularMovies(); // Fetch popular movies when the component loads
     }, []);
 
-
     function checkResponse(data) {
-        if (data.Response === "True") {
+        if (data.Response === 'True') {
             return (
                 <div className="grid laptop:grid-cols-4 tablet:grid-cols-2 grid-cols-1 gap-4 p-4">
                     <div className="text-left w-auto border p-2 rounded-2xl">
                         <img
                             src={data.Poster}
-                            alt="Movie Poster"
+                            alt={data.Title}
                             className="w-full mb-4 rounded-2xl"
                         />
                         <h1 className="">
                             <b>Movie Title:</b> &nbsp;
                             {data.Title}
                         </h1>
-                        <p>
-                            <b>Year: </b> &nbsp;
-                            {data.Year}
-                        </p>
-                        <p>
-                            <b>Released:</b> &nbsp;
-                            {data.Released}
-                        </p>
-                        <p>
-                            <b>Genre:</b> &nbsp;
-                            {data.Genre}
-                        </p>
-                        <p>
-                            <b>Writer:</b> &nbsp;
-                            {data.Writer}
-                        </p>
-                        <p>
-                            <b>Actors:</b> &nbsp;
-                            {data.Actors}
-                        </p>
-                        <p>
-                            <b>Plot:</b> &nbsp;
-                            {data.Plot}
-                        </p>
-                        <p>
-                            <b>Type:</b> &nbsp;
-                            {data.Type}
-                        </p>
-                        <p>
-                            <b>Runtime:</b> &nbsp;
-                            {data.Runtime}
-                        </p>
-                        <p>
-                            <b>IMDB Rating:</b> &nbsp;
-                            {data.imdbRating}
-                        </p>
-                        <p>
-                            <b>Country:</b> &nbsp;
-                            {data.Country}
-                        </p>
-                        <p>
-                            <b>Languages:</b> &nbsp;
-                            {data.Language}
-                        </p>
-                        <p>
-                            <b>Awards:</b> &nbsp;
-                            {data.Awards}
-                        </p>
-                        <p className='hidden'>{data.Response}</p>
+                        {/* Add other movie details as needed */}
                     </div>
                 </div>
             );
         }
         return (
-            <p className='my-8'>
+            <p className="my-8">
                 No Movie found! 😥
             </p>
         );
@@ -117,20 +82,19 @@ const Case03 = () => {
             exit="exit"
             transition={{ duration: 3 }}
         >
-            <section className='bg-[#F8F8FD] border-2 border-blue-500 mt-[4rem] text-black'>
-
+            <section className="bg-[#F8F8FD] selection:bg-blue-400 border-2 border-blue-500 mt-[4rem] text-black">
                 <div className="">
-                    <div className='mx-[rem] min-h-[calc(100vh-13.5rem)]'>
-
-                        <div className='mx-4 text-center'>
+                    <div className="mx-[rem] min-h-[calc(100vh-13.5rem)]">
+                        <div className="mx-4 text-center">
                             <div className="my-12">
                                 {/* input */}
-                                <input type="text"
+                                <input
+                                    type="text"
                                     value={search}
                                     onChange={onInputChange}
-                                    autoComplete='true'
+                                    autoComplete="true"
                                     autoFocus
-                                    className="laptop:text-[1.3rem] text-[1rem] tablet:text-[1.2rem] p-2 px-4 bg-slate-200 rounded-l-3xl"
+                                    className="laptop:text-[1.3rem] text-[1rem] tablet:text-[1.2rem] p-2 px-4 pl-5 bg-slate-200 rounded-l-3xl"
                                 />
 
                                 {/* search button */}
@@ -141,25 +105,49 @@ const Case03 = () => {
                                 >
                                     Search
                                 </button>
+                                <p className=' italic text-black/60 text-[0.875rem] my-1'>
+                                    Search results show up at the bottom of the page
+                                </p>
                             </div>
 
+                            {/* popular movies */}
+                            <div className="">
+                                <h2 className="text-2xl font-semibold mb-4">Popular Movies</h2>
+                                <div className="grid grid-cols-2 laptop:grid-cols-4 tablet:grid-cols-2 gap-4">
+                                    {popularMovies.map((popularMovie) => (
+                                        <div
+                                            key={popularMovie.imdbID}
+                                            className="text-left w-auto border p-2 rounded-2xl"
+                                        >
+                                            <img
+                                                src={popularMovie.Poster}
+                                                alt={popularMovie.Title}
+                                                className="w-[25rem] h-[25rem] mb-4 rounded-2xl"
+                                            />
+                                            <h1 className="">
+                                                <b>Movie Title:</b> &nbsp;
+                                                {popularMovie.Title}
+                                            </h1>
+                                            {/* Add other movie details as needed */}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
 
                             {/* movie search details/results */}
-                            <div className="">
+                            <div className="py-20 px-4">
+                                <h1 className='text-center mb-8 text-[1.5rem] font-semibold'>
+                                    Search Results
+                                </h1>
                                 {checkResponse(movie)}
                             </div>
 
                         </div>
-
                     </div>
                 </div>
-
             </section>
-
-
         </motion.div>
     );
-}
-
+};
 
 export default Case03;
