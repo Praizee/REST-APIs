@@ -22,7 +22,7 @@ const Footer = () => {
                         </a>
                     </p>
                     <p className="py-2 copyright text-white/40 laptop:mr-[rem] laptop:ml-0 mx-8 text-[0.85rem] laptop:block tablet:block ">
-                        *API Consumption practice with IMDB 🎬*
+                        *OMBD API Consumption 🎬*
                     </p>
                     <p className="py-2 copyright laptop:mr-[rem] laptop:ml-0 mx-8 text-[0.85rem] laptop:block tablet:block ">
                         {/* text-[#ffffff74] */}
