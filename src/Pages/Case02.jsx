@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 
-
 const animationConfiguration = {
     initial: { opacity: 0 },
     animate: { opacity: 1 },
@@ -15,6 +14,7 @@ const Case02 = () => {
     const API_KEY = "e6a9241d";
     const url = `https://www.omdbapi.com/?t=${search}&apikey=${API_KEY}`;
 
+    // Function to fetch movie data
     const getMovie = async () => {
         try {
             const response = await fetch(url);
@@ -26,20 +26,23 @@ const Case02 = () => {
         }
     }
 
+    // Event handler for input change
     const onInputChange = e => {
         setSearch(e.target.value);
     }
 
     useEffect(() => {
+        // Fetch movie data when the component mounts
         getMovie();
     }, []);
 
-
+    // Function to check the response and render the movie details or a message
     function checkResponse(data) {
         if (data.Response === "True") {
             return (
                 <div className="grid laptop:grid-cols-4 tablet:grid-cols-2 grid-cols-1 gap-4 p-4">
                     <div className="text-left w-auto border p-2 rounded-2xl">
+                        {/* Movie details */}
                         <img
                             src={data.Poster}
                             alt="Movie Poster"
@@ -49,59 +52,12 @@ const Case02 = () => {
                             <b>Movie Title:</b> &nbsp;
                             {data.Title}
                         </h1>
-                        <p>
-                            <b>Year: </b> &nbsp;
-                            {data.Year}
-                        </p>
-                        <p>
-                            <b>Released:</b> &nbsp;
-                            {data.Released}
-                        </p>
-                        <p>
-                            <b>Genre:</b> &nbsp;
-                            {data.Genre}
-                        </p>
-                        <p>
-                            <b>Writer:</b> &nbsp;
-                            {data.Writer}
-                        </p>
-                        <p>
-                            <b>Actors:</b> &nbsp;
-                            {data.Actors}
-                        </p>
-                        <p>
-                            <b>Plot:</b> &nbsp;
-                            {data.Plot}
-                        </p>
-                        <p>
-                            <b>Type:</b> &nbsp;
-                            {data.Type}
-                        </p>
-                        <p>
-                            <b>Runtime:</b> &nbsp;
-                            {data.Runtime}
-                        </p>
-                        <p>
-                            <b>IMDB Rating:</b> &nbsp;
-                            {data.imdbRating}
-                        </p>
-                        <p>
-                            <b>Country:</b> &nbsp;
-                            {data.Country}
-                        </p>
-                        <p>
-                            <b>Languages:</b> &nbsp;
-                            {data.Language}
-                        </p>
-                        <p>
-                            <b>Awards:</b> &nbsp;
-                            {data.Awards}
-                        </p>
-                        <p className='hidden'>{data.Response}</p>
+                        {/* Add more movie details */}
                     </div>
                 </div>
             );
         }
+        // Message for no movie found
         return (
             <p className='my-8'>
                 No Movie found! 😥
@@ -118,13 +74,11 @@ const Case02 = () => {
             transition={{ duration: 3 }}
         >
             <section className='bg-[#F8F8FD] border-2 border-blue-500 mt-[4rem] text-black'>
-
                 <div className="">
                     <div className='mx-[rem] min-h-[calc(100vh-13.5rem)]'>
-
                         <div className='mx-4 text-center'>
                             <div className="my-12">
-                                {/* input */}
+                                {/* Input for searching */}
                                 <input type="text"
                                     value={search}
                                     onChange={onInputChange}
@@ -132,8 +86,7 @@ const Case02 = () => {
                                     autoFocus
                                     className="laptop:text-[1.3rem] text-[1rem] tablet:text-[1.2rem] p-2 px-4 bg-slate-200 rounded-l-3xl"
                                 />
-
-                                {/* search button */}
+                                {/* Search button */}
                                 <button
                                     type="submit"
                                     onClick={getMovie}
@@ -142,24 +95,16 @@ const Case02 = () => {
                                     Search
                                 </button>
                             </div>
-
-
-                            {/* movie search details/results */}
+                            {/* Display movie details or message */}
                             <div className="">
                                 {checkResponse(movie)}
                             </div>
-
                         </div>
-
                     </div>
                 </div>
-
             </section>
-
-
         </motion.div>
     );
 }
-
 
 export default Case02;

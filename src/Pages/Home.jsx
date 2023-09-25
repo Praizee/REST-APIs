@@ -17,6 +17,7 @@ const Home = () => {
   const API_KEY = 'e6a9241d';
   const searchUrl = `https://www.omdbapi.com/?s=${search}&y=${yearFilter}&i=${imdbIdFilter}&apikey=${API_KEY}`;
 
+  // Function to fetch movies
   const getMovies = async () => {
     try {
       const response = await fetch(searchUrl);
@@ -41,21 +42,23 @@ const Home = () => {
     }
   };
 
-
+  // Event handler for search input change
   const onInputChange = (e) => {
     setSearch(e.target.value);
   };
 
+  // Event handler for year filter change
   const onYearFilterChange = (e) => {
     setYearFilter(e.target.value);
     getMovies(); // Trigger sorting when the filter option changes
   };
 
-
+  // Event handler for IMDb ID filter change
   const onImdbIdFilterChange = (e) => {
     setImdbIdFilter(e.target.value);
   };
 
+  // Event handler for cancel button
   const handleCancel = () => {
     setSearch('');
     setYearFilter('');
@@ -64,6 +67,7 @@ const Home = () => {
     setSelectedMovie(null); // Reset selected movie
   };
 
+  // Effect to fetch movies when search, year filter, or IMDb ID filter changes
   useEffect(() => {
     if (search || yearFilter || imdbIdFilter) {
       getMovies();
@@ -168,7 +172,7 @@ const Home = () => {
                           <b>Year:</b> &nbsp;
                           {movie.Year}
                         </p>
-                        {/* Add other movie details as needed */}
+                        {/* Add other movie details as needed here 🙃 */}
                       </div>
                     ))}
                   </div>
