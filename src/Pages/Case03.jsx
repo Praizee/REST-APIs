@@ -129,6 +129,7 @@ const Case03 = () => {
                                     value={search}
                                     onChange={onInputChange}
                                     autoComplete='true'
+                                    autoFocus
                                     className="laptop:text-[1.3rem] text-[1rem] tablet:text-[1.2rem] p-2 px-4 bg-slate-200 rounded-l-3xl"
                                 />
 
