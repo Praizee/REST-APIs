@@ -9,7 +9,7 @@ const MovieDetail = ({ movie }) => {
         <img
           src={movie.Poster}
           alt={movie.Title}
-          className="w-full mb-4 rounded-2xl"
+          className="w-[25rem] h-[25rem] mb-4 rounded-2xl"
         />
         <h1 className="">
           <b>Movie Title:</b> &nbsp;
