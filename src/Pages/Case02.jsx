@@ -52,7 +52,7 @@ const Case02 = () => {
                             <b>Movie Title:</b> &nbsp;
                             {data.Title}
                         </h1>
-                        {/* Add more movie details */}
+                        {/* Add more movie details as needed */}
                     </div>
                 </div>
             );
@@ -78,7 +78,7 @@ const Case02 = () => {
                     <div className='mx-[rem] min-h-[calc(100vh-13.5rem)]'>
                         <div className='mx-4 text-center'>
                             <div className="my-12">
-                                {/* Input for searching */}
+                                {/* Input for movie search */}
                                 <input type="text"
                                     value={search}
                                     onChange={onInputChange}
@@ -95,7 +95,7 @@ const Case02 = () => {
                                     Search
                                 </button>
                             </div>
-                            {/* Display movie details or message */}
+                            {/* Display movie details or 'no movie found' message */}
                             <div className="">
                                 {checkResponse(movie)}
                             </div>
