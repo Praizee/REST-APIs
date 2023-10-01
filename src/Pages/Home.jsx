@@ -177,7 +177,7 @@ const Home = () => {
                     ))}
                   </div>
                 ) : (
-                  <p className="my-8">
+                  <p className="my-8 italic">
                     {search || yearFilter || imdbIdFilter
                       ? 'No matching movies found! 😥'
                       : 'Start your search above.'}
