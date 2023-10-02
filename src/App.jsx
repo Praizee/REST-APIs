@@ -5,7 +5,6 @@ import HomePage from "./Pages/Home";
 import NotFoundPage from "./Pages/404 Page/NotFoundPage.jsx";
 import Case02 from "./Pages/Case02";
 import Case03 from "./Pages/Case03";
-// import MovieDetail from "./Pages/MovieDetail";
 
 export default function App() {
 
@@ -16,7 +15,6 @@ export default function App() {
           <Route index element={<HomePage />} />
           <Route path="/case-02" element={<Case02 />} />
           <Route path="/case-03" element={<Case03 />} />
-          {/* <Route path="/movie/:id" component={MovieDetail} /> */}
           {/* This is the catch-all route */}
           <Route path="*" element={<NotFoundPage />} />
         </Route>
